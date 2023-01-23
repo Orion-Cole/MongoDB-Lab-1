@@ -26,21 +26,6 @@ submitButton.addEventListener('click', async () => {
         readyBool
     }
 
-
-    let nameStringV = document.getElementById('name-input-v').value;
-    let colorStringV = document.getElementById('color-input-v').value;
-    let ageNumberV = +document.getElementById('age-input-v').value;
-    let readyBoolV = document.getElementById('ready-bool-v').value === "true" ? true : false;
-
-
-    const vegetable = {
-        nameStringV,
-        colorStringV,
-        ageNumberV,
-        readyBoolV
-    }
-
-
     let response = await fetch('http://localhost:5000/create_fruit', {
         method: "POST",
         headers: {
@@ -88,9 +73,28 @@ deleteButton.addEventListener('click', async () => {
 
 
 
-let displayPageButton = document.getElementById('display-page-button');
+let displayFruitButton = document.getElementById('display-fruit-button');
 
-displayPageButton.addEventListener('click', () => {
-    // change HTML files (from index to display_food.html)
-    window.location.href = "./display_food"
+displayFruitButton.addEventListener('click', () => {
+    // change HTML files (from index to display_fruit.html)
+    window.location.href = "./display_fruit"
+})
+
+let displayVegButton = document.getElementById('display-veg-button');
+
+displayVegButton.addEventListener('click', () => {
+    // change HTML files (from index to display_veg.html)
+    window.location.href = "./display_veg"
+})
+
+let displayOneVegButton = document.getElementById('display-one-veg-button');
+
+displayOneVegButton.addEventListener('click', () => {
+    window.location.href = "./display_one_veg"
+})
+
+let createVegButton = document.getElementById('create-veg-button');
+
+createVegButton.addEventListener('click', () => {
+    window.location.href = "./create_veg"
 })

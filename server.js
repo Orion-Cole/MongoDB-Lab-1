@@ -96,7 +96,7 @@ app.delete("/delete_nameless_data", async (req, res) => {
    res.send({data: `deleted ${response.deletedCount} items.`})
 })
 
-app.get('/get_food_data', async (req, res) => {
+app.get('/fruits', async (req, res) => {
     // get data from database
     let response = await MyFruit.find({});
     console.log(response);
@@ -107,6 +107,13 @@ app.get('/get_food_data', async (req, res) => {
 
 app.get('/veggies', async (req, res) => {
     let response = await MyVeggie.find({})
+    console.log(response);
+    res.json(response)
+})
+
+app.get('/veggie/:veggieName', async (req, res) => {
+    console.log(req.params.veggieName);
+    let response = await MyVeggie.find({name:`${req.params.veggieName}`})
     console.log(response);
     res.json(response)
 })

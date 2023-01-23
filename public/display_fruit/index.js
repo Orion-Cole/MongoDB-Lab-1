@@ -1,9 +1,10 @@
-console.log("Display Page");
+console.log("Display Fruit Page");
 
 let containerElement = document.getElementById('container')
 
 const getData = async () => {
-    let data = await fetch("/get_food_data");
+    console.log('GET DATA FUNCTION ACTIVATED');
+    let data = await fetch("/fruits");
     data.json().then((parsedData) => {
         console.log(parsedData); // array of objects
         // map through and put in HTML
